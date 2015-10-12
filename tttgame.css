@@ -1,13 +1,23 @@
+/*
+background: rgba(180, 178, 165, 1)
+background: rgba(220, 217, 199, 1)
+background: rgba(253, 253, 241, 1)
+background: rgba(212, 211, 207, 1)
+background: rgba(47, 48, 48, 1)
+*/
+
 body {
   font-family: helvetica;
-  background: blue;
+  background: rgba(212, 211, 207, 1);
+}
+
+h1 {
+  font-family: 'Chango', cursive;
+  font-size: 5em;
 }
 
 #main {
-  background: red;
-  margin: 1em;
-  padding: 1em;
-  border-radius: 15pt;
+  background: ;
   min-height: 500px;
   display:  flex;
     -webkit-flex;
@@ -16,11 +26,12 @@ body {
 }
 
 .board {
-  background: green;
+  background: rgba(180, 178, 165, 1);
+  border: 3px solid rgba(47, 48, 48, 1);
   margin-right: 1em;
   margin-left: auto;
   padding: 1em;
-  border-radius: 15pt;
+  border-radius: 30pt;
   min-width: 500px;
   min-height: 500px;
           order: 1;
@@ -28,7 +39,8 @@ body {
 }
 
 .square {
-  background: yellow;
+  background: rgba(220, 217, 199, 1);
+  border: 3px solid rgba(253, 253, 241, 1);
   margin: 1em;
   padding: 1em;
   border-radius: 15pt;
@@ -41,7 +53,8 @@ body {
 .board > div:nth-child(7) {clear: both;}
 
 .score {
-  background: white;
+  background: ;
+  color: rgba(47, 48, 48, 1);
   margin-right: auto;
   margin-left: 1em;
   padding: 1em;
@@ -53,11 +66,17 @@ body {
 }
 
 header, footer {
-  display: block;
-  margin: 1em;
-  padding: 1em;
+  background: ;
+  color: rgba(47, 48, 48, 1);
   min-height: 100px;
-  border-radius: 15pt;
+  display: block;
   text-align: center;
-  background: gray;
+}
+
+.title {
+  margin: 10px;
+}
+
+.foot {
+  padding: 2em;
 }
