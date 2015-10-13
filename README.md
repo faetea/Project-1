@@ -30,47 +30,61 @@ Build a dynamic game that allows two players to compete.
 
 ### Data Objects/Nouns:
 
-player 1
+**player 1**
 - name
 - choice of icon
-player 2
+
+**player 2**
 - name
 - choice of icon
-game board
+
+**game board**
 - 9 squares & who moved in each square
 
 
 
 ### User Stories:
 
+
 **Story 1**
+
 As a player, I can enter my name. (done)
 
+
 **Story 2**
+
 As the scoreboard, assign an icon. (done)
 
+
 **Story 3**
+
 As a player, I can click on game board squares to claim them.
 
+
 **Story 4**
+
 As the scoreboard, when there are 3 squares in a row the game is finished
 
+
 **Story 5**
+
 As the scoreboard, when game is finished, annouce scores and winner.
 
+
 **Story 6**
+
 As the game, when score is annouced, ask "Play Again?"
 
 
 
 ### Game Logic:
 
-players each enter names, game remembers player names
-player 1 chooses icon, game remembers that icon to represent player 1
-player 2 chooses different icon, game remembers that icon to represent player 2
-player 1 clicks square, game places P1 icon in square
-player 2 clicks square, game places P2 icon in square
-players continue
-as soon as either player has 3 icons in a row, game annouces game finished!
-game annouces score and winner
-game asks "play again?"
+- players each enter names, game remembers player names
+- player 1 chooses icon, game remembers that icon to represent player 1
+- player 2 chooses different icon, game remembers that icon to represent player 2
+- player 1 clicks square, game places P1 icon in square
+- player 2 clicks square, game places P2 icon in square
+- players continue
+- as soon as either player has 3 icons in a row, game annouces game finished!
+- game annouces score and winner
+- game asks "play again?"
