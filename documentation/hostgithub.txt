@@ -1,9 +1,0 @@
-repo linked to github
-create an index.html file (+ other files, potentially)
-commit the code to your repo
-create a branch locally called 'gh-pages'
-if necessary, merge your (finished) site into the 'gh-pages' branch, so that the gh-pages branch and your integration branch look the same
-push your gh-pages branch up to GitHub
-site should now be visible
-
-http://faetea.github.io/testghpages/
