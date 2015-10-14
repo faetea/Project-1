@@ -7,13 +7,13 @@ background: rgba(47, 48, 48, 1)
 */
 
 body {
-  font-family: helvetica;
+  font-family: helvetica, sans-serif;
   background: rgba(212, 211, 207, 1);
 }
 
 h1 {
   font-family: 'Chango', cursive;
-  font-size: 5em;
+  font-size: 4em;
 }
 
 #main {
@@ -55,7 +55,6 @@ h1 {
 .board > div:nth-child(7) {clear: both;}
 
 .score {
-  background: ;
   color: rgba(47, 48, 48, 1);
   margin-right: auto;
   margin-left: 1em;
