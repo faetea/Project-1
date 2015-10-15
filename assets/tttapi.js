@@ -154,7 +154,7 @@ $(function() {
   });
 
   $('#list-games').on('submit', function(e) {
-    var token = $(this).children('[name="token"]').val();
+    var token = $('.token').val(); // edited
     e.preventDefault();
     tttapi.listGames(token, callback);
   });
