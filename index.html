@@ -6,10 +6,11 @@
     <link rel="stylesheet" href="assets/tttgame.css"/>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://ttt.wdibos.com/js/resource-watcher-0.1.0.js" defer charset="utf-8"></script>
+    <script type="text/javascript" src="assets/start.js"></script>
   </head>
   <body>
 
-<!--     <header>
+    <header>
       <div id = "forms">
         <form id="register">
           <input name="email" type="text" placeholder="email">
@@ -22,27 +23,32 @@
           <input name="password" type="password" placeholder="password">
           <input name="login" type="submit" value="Login">
         </form>
-        <form id="list-games">
+
+<!--         <form id="list-games">
           <input name="list-games" type="submit" value="List Games">
           <input class="token" name="token" type="hidden">
-        </form>
+        </form> -->
+
         <form id="create-game">
-          <input name="create-game" type="submit" value="Create Game">
+          <input name="create-game" type="submit" value="Create New Game">
           <input class="token" name="token" type="hidden">
         </form>
+
         <form id="show-game">
           <label for="show-id">Id:</label>
           <input id="show-id" type="text" size="4">
-          <input name="show-game" type="submit" value="Show Game">
+          <input name="show-game" type="submit" value="Show Current Game">
           <input class="token" name="token" type="hidden">
        </form>
+
         <form id="join-game">
           <label for="join-id">Id:</label>
           <input id="join-id" type="text" size="4">
-          <input name="join-game" type="submit" value="Join Game">
+          <input name="join-game" type="submit" value="Join Existing Game">
           <input class="token" name="token" type="hidden">
        </form>
-       <form id="mark-cell">
+
+<!--        <form id="mark-cell">
           <label for="mark-id">Id:</label>
           <input id="mark-id" type="text" size="4">
           <label for="mark-index">Index:</label>
@@ -61,8 +67,9 @@
           <input name="value" id="watch-value" type="text" size="4">
           <input name="watch-game" type="submit" value="Watch Game">
           <input class="token" name="token" type="hidden">
-        </form>
- -->      </div>
+        </form> -->
+
+      </div>
       <h1 class="title">Tic Tac Toe</h1>
     </header>
 
@@ -81,6 +88,7 @@
     </div>
 
     <div class = "score">
+      <button id="assign" type="button" onclick=" ">Assign Teams</button>
       <h3>Score Board</h3>
       <h5><img src="assets/dalek.png" height="50px"> <span id="Xname">Dalek</span></h5>
       <h5><img src="assets/tardis.png" height="50px"> <span id="Oname">Tardis</span></h5>

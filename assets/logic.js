@@ -10,19 +10,29 @@ var player_o = {
 
 var gameBoard = {};
 
-// player 1 enter name, game remembers player name
-player_x.name = window.prompt('What is your name?', 'the Daleks');
-window.alert(player_x.name + ", you are the first player.  Your team is the Daleks!");
-// $('#status').text(player_x.name + ", you are the first player.  Your team is the Daleks!");
-// player 1 assigned icon, game remembers that icon to represent player 1
-document.getElementById('Xname').textContent = player_x.name;
 
-// player 2 enters name, game remembers player name
-player_o.name = window.prompt('What is your name?', 'the Doctor');
-window.alert(player_o.name + ", you are the second player.  Your team is the Doctor!");
-// $('#status').text(player_o.name + ", you are the second player.  Your team is the Doctor!");
-// player 2 assigned second icon, game remembers that icon to represent player 2
-document.getElementById('Oname').textContent = player_o.name;
+
+
+// button saying 'Start',
+// after player clicks 'Start', game will ask for player names.
+$( "#assign" ).click(function() {
+  // player 1 enter name, game remembers player name
+  player_x.name = prompt('What is your name?', 'the Daleks');
+  alert(player_x.name + ", you are the first player.  Your team is the Daleks!");
+  // $('#status').text(player_x.name + ", you are the first player.  Your team is the Daleks!");
+  // player 1 assigned icon, game remembers that icon to represent player 1
+  document.getElementById('Xname').textContent = player_x.name;
+
+  // player 2 enters name, game remembers player name
+  player_o.name = prompt('What is your name?', 'the Doctor');
+  alert(player_o.name + ", you are the second player.  Your team is the Doctor!");
+  // $('#status').text(player_o.name + ", you are the second player.  Your team is the Doctor!");
+  // player 2 assigned second icon, game remembers that icon to represent player 2
+  document.getElementById('Oname').textContent = player_o.name;
+});
+
+
+
 
 // [0 1 2
 //  3 4 5
@@ -68,7 +78,7 @@ function getWinner() {
     return checkColumns();
   } else if (checkDiagonals() != null) {
     return checkDiagonals();
-  } else if ( // if every square isn't equal to null then return tie
+  } else if ( // if every square isn't equal to null then return Tie
     (gameBoard[0] != null) &&
     (gameBoard[1] != null) &&
     (gameBoard[2] != null) &&

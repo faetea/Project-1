@@ -9,11 +9,29 @@ background: rgba(47, 48, 48, 1)
 body {
   font-family: helvetica, sans-serif;
   background: rgba(212, 211, 207, 1);
+  margin: 0;
+}
+
+header, footer {
+  background: ;
+  color: rgba(47, 48, 48, 1);
+  min-height: 100px;
+  display: block;
 }
 
 #forms {
-  margin: 1em;
+  background: rgba(180, 178, 165, 1);
   padding: 1em;
+}
+
+#list-games, #create-game {
+  margin: 5px;
+}
+
+#register, #login {
+  margin: 5px;
+  float: right;
+  clear: both;
 }
 
 .title {
@@ -30,9 +48,6 @@ body {
     -webkit-flex;
           flex-flow: row;
   -webkit-flex-flow: row;
-}
-
-#status {
 }
 
 .board {
@@ -74,13 +89,6 @@ body {
   min-width: 200px;
           order: 2;
   -webkit-order: 2;
-}
-
-header, footer {
-  background: ;
-  color: rgba(47, 48, 48, 1);
-  min-height: 100px;
-  display: block;
 }
 
 .foot {
