@@ -2,31 +2,25 @@
 
 https://github.com/ga-wdi-boston/js-project-ttt
 
-
-
 ### Need to do:
 
 Build a dynamic game that allows two players to compete.
 
-
-
 ### Timeline Checklist for Project #1
 
-- Sketch wireframes for front-end appearance and behaviors **done Tue, 6th**
-- What kind of data front-end needs to store/manipulate to function? **Mon, 12th**
-- Create repo for project, add README **done Tue, 6th**
-- Create front-end HTML and CSS (host on GitHub Pages) **done Wed, 7th**
-- Write out user stories for app **Mon, 12th**
-- Write code to manage game logic **Mon, 12th**
+- Sketch wireframes for front-end appearance and behaviors            **done Tue, 6th**
+- What kind of data front-end needs to store/manipulate to function?  **done Mon, 12th**
+- Create repo for project, add README                                 **done Tue, 6th**
+- Create front-end HTML and CSS (host on GitHub Pages)                **done Wed, 7th**
+- Write out user stories for app                                      **done Mon, 12th**
+- Write code to manage game logic                                     **done Mon, 12th**
 - Write jQuery code to handle browser interaction
-- Link jQuery up w/ game’s logic
+- Link jQuery up w/ game’s Logic                                      **done Tues, 13th**
 - Communicate w/ back-end.  Write AJAX code
 - Add AJAX to front-end app, link it to back-end app
 - Add additional features to app.  Clean up documentation
 - Test and debug
-- Present! **Fri, 16th**
-
-
+- Present!                                                          **Fri, 16th**
 
 ### Data Objects/Nouns:
 
@@ -41,50 +35,33 @@ Build a dynamic game that allows two players to compete.
 **game board**
 - 9 squares & who moved in each square
 
-
-
 ### User Stories:
 
-
-**Story 1**
-
-As a player, I can enter my name. (done)
-
-
-**Story 2**
-
-As the scoreboard, assign an icon. (done)
-
-
-**Story 3**
-
-As a player, I can click on game board squares to claim them.
-
-
-**Story 4**
-
-As the scoreboard, when there are 3 squares in a row the game is finished
-
-
-**Story 5**
-
-As the scoreboard, when game is finished, annouce scores and winner.
-
-
-**Story 6**
-
-As the game, when score is annouced, ask "Play Again?"
-
-
+> **Story 1**
+> As a player, I can enter my name. (done)
+> **Story 2**
+> As the scoreboard, assign an icon. (done)
+> **Story 3**
+> As a player, I can click on game board squares to claim them.
+> **Story 4**
+> As the scoreboard, when there are 3 squares in a row the game is finished
+> **Story 5**
+> As the scoreboard, when game is finished, annouce scores and winner.
+> **Story 6**
+> As the game, when score is annouced, ask "Play Again?"
 
 ### Game Logic:
 
-- players each enter names, game remembers player names
-- player 1 chooses icon, game remembers that icon to represent player 1
-- player 2 chooses different icon, game remembers that icon to represent player 2
-- player 1 clicks square, game places P1 icon in square
-- player 2 clicks square, game places P2 icon in square
-- players continue
-- as soon as either player has 3 icons in a row, game annouces game finished!
-- game annouces score and winner
-- game asks "play again?"
+1. Game prompts "What is your name?",  Player 1 enters name (or placeholder name is used)
+1. Game alerts "(player-name or placeholder), you are the first player.  Your team is the Daleks!"
+1. For player 2, Game prompts "What is your name?",  Player 2 enters name (or placeholder name is used)
+1. Game alerts "(player-name or placeholder), you are the second player.  Your team is the Doctor!"
+1. Game assigns Dalek icon to Player 1,  and displays Player 1 name on the scoreboard
+1. Game assigns Tardis icon to Player 2,  and displays Player 2 name on the scoreboard
+1. Player 1 clicks square,  Game checks if there is already a piece in that square, if empty, places player 1 icon in square
+1. Game uses 'var = whoseTurn' and 'function switchTurn()' to keep track of whose turn it is
+1. Player 2 takes turn,  Game checks if there is already a piece in that square, if empty, places player 2 icon in square
+1. Repeat
+1. Game uses 'function getWinner()' to know when win state has been reached (three of same icons form a row)
+1. Once win state is reacted Game knows to set 'whoseTurn = 3' so that neither players icons can be placed anymore
+1. Game alerts "Game Over! (winner-name) has won!",  Confirms "Do you want to play again?",  Re-opens 'index.html'

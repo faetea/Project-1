@@ -10,47 +10,66 @@ var player_o = {
 
 var gameBoard = {};
 
-
 // player 1 enter name, game remembers player name
 player_x.name = window.prompt('What is your name?', 'the Daleks');
-$('#status').text(player_x.name + ", you are the first player.  Your team is the Daleks!");
+window.alert(player_x.name + ", you are the first player.  Your team is the Daleks!");
+// $('#status').text(player_x.name + ", you are the first player.  Your team is the Daleks!");
 // player 1 assigned icon, game remembers that icon to represent player 1
 document.getElementById('Xname').textContent = player_x.name;
 
-
 // player 2 enters name, game remembers player name
 player_o.name = window.prompt('What is your name?', 'the Doctor');
-$('#status').text(player_o.name + ", you are the second player.  Your team is the Doctor!");
+window.alert(player_o.name + ", you are the second player.  Your team is the Doctor!");
+// $('#status').text(player_o.name + ", you are the second player.  Your team is the Doctor!");
 // player 2 assigned second icon, game remembers that icon to represent player 2
 document.getElementById('Oname').textContent = player_o.name;
 
+// [0 1 2
+//  3 4 5
+//  6 7 8]
 
-function getWinner() {
-  if (
-    (gameBoard['div1'] === 'dalek' && gameBoard['div2'] === 'dalek' && gameBoard['div3'] === 'dalek') ||
-    (gameBoard['div4'] === 'dalek' && gameBoard['div5'] === 'dalek' && gameBoard['div6'] === 'dalek') ||
-    (gameBoard['div7'] === 'dalek' && gameBoard['div8'] === 'dalek' && gameBoard['div9'] === 'dalek') ||
-    (gameBoard['div1'] === 'dalek' && gameBoard['div4'] === 'dalek' && gameBoard['div7'] === 'dalek') ||
-    (gameBoard['div2'] === 'dalek' && gameBoard['div5'] === 'dalek' && gameBoard['div8'] === 'dalek') ||
-    (gameBoard['div3'] === 'dalek' && gameBoard['div6'] === 'dalek' && gameBoard['div9'] === 'dalek') ||
-    (gameBoard['div1'] === 'dalek' && gameBoard['div5'] === 'dalek' && gameBoard['div9'] === 'dalek') ||
-    (gameBoard['div3'] === 'dalek' && gameBoard['div5'] === 'dalek' && gameBoard['div7'] === 'dalek') ) {
-    return player_x.name;
-  } else if (
-    (gameBoard['div1'] === 'tardis' && gameBoard['div2'] === 'tardis' && gameBoard['div3'] === 'tardis') ||
-    (gameBoard['div4'] === 'tardis' && gameBoard['div5'] === 'tardis' && gameBoard['div6'] === 'tardis') ||
-    (gameBoard['div7'] === 'tardis' && gameBoard['div8'] === 'tardis' && gameBoard['div9'] === 'tardis') ||
-    (gameBoard['div1'] === 'tardis' && gameBoard['div4'] === 'tardis' && gameBoard['div7'] === 'tardis') ||
-    (gameBoard['div2'] === 'tardis' && gameBoard['div5'] === 'tardis' && gameBoard['div8'] === 'tardis') ||
-    (gameBoard['div3'] === 'tardis' && gameBoard['div6'] === 'tardis' && gameBoard['div9'] === 'tardis') ||
-    (gameBoard['div1'] === 'tardis' && gameBoard['div5'] === 'tardis' && gameBoard['div9'] === 'tardis') ||
-    (gameBoard['div3'] === 'tardis' && gameBoard['div5'] === 'tardis' && gameBoard['div7'] === 'tardis') ) {
-    return player_o.name;
-  } else {
-    return null;
+// check row 1 for values (true or false for 1, 2, 3)
+// if there are any nulls, no winner on this row (do three times), move on
+// if there are no nulls, check if all the values are the same. if not, move on to next row. if so, return something that indicates this row is a winner.
+// return something that indicates there are no row winners at all
+
+function checkRows() {
+  if ((gameBoard[0] === gameBoard[1]) && (gameBoard[0] === gameBoard[2]) === true) {
+    return gameBoard[0];
+  } else if ((gameBoard[3] === gameBoard[4]) && (gameBoard[3] === gameBoard[5]) === true) {
+    return gameBoard[3];
+  } else if ((gameBoard[6] === gameBoard[7]) && (gameBoard[6] === gameBoard[8]) === true) {
+    return gameBoard[6];
   }
 };
 
+function checkColumns() {
+  if ((gameBoard[0] === gameBoard[3]) && (gameBoard[0] === gameBoard[6]) === true) {
+    return gameBoard[0];
+  } else if ((gameBoard[1] === gameBoard[4]) && (gameBoard[1] === gameBoard[7]) === true) {
+    return gameBoard[1];
+  } else if ((gameBoard[2] === gameBoard[5]) && (gameBoard[2] === gameBoard[8]) === true) {
+    return gameBoard[2];
+  }
+};
+
+function checkDiagonals() {
+  if ((gameBoard[0] === gameBoard[4]) && (gameBoard[0] === gameBoard[8]) === true) {
+    return gameBoard[0];
+  } else if ((gameBoard[2] === gameBoard[4]) && (gameBoard[2] === gameBoard[6]) === true) {
+    return gameBoard[2];
+  }
+};
+
+function getWinner() {
+  if (checkRows() != null) {
+    return checkRows;
+  } else if (checkColumns() != null) {
+    return checkColumns;
+  } else if (checkDiagonals() != null) {
+    return checkDiagonals;
+  }
+};
 
 var whoseTurn;
 whoseTurn = 1;
@@ -63,10 +82,8 @@ function switchTurn(){
   }
 };
 
-
-var dalekSnippet = '<img src="assets/dalek.png" height="100px">';
-var tardisSnippet = '<img src="assets/tardis.png" height="100px">';
-
+var dalekSnippet = '<img id=da src="assets/dalek.png" height="100px">';
+var tardisSnippet = '<img id=ta src="assets/tardis.png" height="100px">';
 
 // To take turns, need to:
 // 1. Know whose turn it is
@@ -78,12 +95,10 @@ var tardisSnippet = '<img src="assets/tardis.png" height="100px">';
 // 7. Know to annouce winner
 // 8. Know to ask "play again?"
 
-
 $( ".square" ).click(function() {
   var idToUse = $(this).attr('id');
     if (gameBoard[idToUse] !== 'dalek' && gameBoard[idToUse] !== 'tardis') {
       if (whoseTurn === 1) {
-        // $('#' + idToUse).
         document.getElementById(idToUse).innerHTML = dalekSnippet;
         gameBoard[idToUse] = 'dalek';
       }
@@ -91,7 +106,6 @@ $( ".square" ).click(function() {
         document.getElementById(idToUse).innerHTML = tardisSnippet;
         gameBoard[idToUse] = 'tardis';
       }
-
 
       var winner = getWinner();
       if (winner) {
@@ -103,7 +117,6 @@ $( ".square" ).click(function() {
       } else {
         switchTurn();
       }
-
 
     }
     console.log(gameBoard);

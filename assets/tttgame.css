@@ -11,9 +11,16 @@ body {
   background: rgba(212, 211, 207, 1);
 }
 
-h1 {
+#forms {
+  margin: 1em;
+  padding: 1em;
+}
+
+.title {
   font-family: 'Chango', cursive;
-  font-size: 4em;
+  font-size: ;
+  margin: 10px;
+  text-align: center;
 }
 
 #main {
@@ -23,6 +30,9 @@ h1 {
     -webkit-flex;
           flex-flow: row;
   -webkit-flex-flow: row;
+}
+
+#status {
 }
 
 .board {
@@ -71,13 +81,9 @@ header, footer {
   color: rgba(47, 48, 48, 1);
   min-height: 100px;
   display: block;
-  text-align: center;
-}
-
-.title {
-  margin: 10px;
 }
 
 .foot {
   padding: 2em;
+  text-align: center;
 }
