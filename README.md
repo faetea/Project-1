@@ -27,11 +27,9 @@ Build a dynamic game that allows two players to compete.
 **player 1**
 - name
 - choice of icon
-
 **player 2**
 - name
 - choice of icon
-
 **game board**
 - 9 squares & who moved in each square
 
@@ -39,14 +37,19 @@ Build a dynamic game that allows two players to compete.
 
 > **Story 1**
 > As a player, I can enter my name. (done)
+>
 > **Story 2**
 > As the scoreboard, assign an icon. (done)
+>
 > **Story 3**
 > As a player, I can click on game board squares to claim them.
+>
 > **Story 4**
 > As the scoreboard, when there are 3 squares in a row the game is finished
+>
 > **Story 5**
 > As the scoreboard, when game is finished, annouce scores and winner.
+>
 > **Story 6**
 > As the game, when score is annouced, ask "Play Again?"
 

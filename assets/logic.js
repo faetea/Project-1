@@ -63,11 +63,11 @@ function checkDiagonals() {
 
 function getWinner() {
   if (checkRows() != null) {
-    return checkRows;
+    return checkRows();
   } else if (checkColumns() != null) {
-    return checkColumns;
+    return checkColumns();
   } else if (checkDiagonals() != null) {
-    return checkDiagonals;
+    return checkDiagonals();
   }
 };
 
