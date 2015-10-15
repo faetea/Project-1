@@ -68,6 +68,19 @@ function getWinner() {
     return checkColumns();
   } else if (checkDiagonals() != null) {
     return checkDiagonals();
+  } else if ( // if every square isn't equal to null then return tie
+    (gameBoard[0] != null) &&
+    (gameBoard[1] != null) &&
+    (gameBoard[2] != null) &&
+    (gameBoard[3] != null) &&
+    (gameBoard[4] != null) &&
+    (gameBoard[5] != null) &&
+    (gameBoard[6] != null) &&
+    (gameBoard[7] != null) &&
+    (gameBoard[8] != null) ) {
+    if (window.confirm("It's a tie! Do you want to play again?")) {
+      window.open("index.html", "Reset the board!");
+    }
   }
 };
 
