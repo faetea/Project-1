@@ -2,11 +2,14 @@
 
 Deployed App: http://faetea.github.io/Project-1/
 
-Prompt: https://github.com/ga-wdi-boston/js-project-ttt
+<img src="https://raw.githubusercontent.com/faetea/Project-1/master/documentation/Mockup1.png">
+
 
 ### Need to do:
 
 Build a dynamic game that allows two players to compete.
+
+Prompt: https://github.com/ga-wdi-boston/js-project-ttt
 
 ### Timeline Checklist for Project #1
 
@@ -36,6 +39,7 @@ Build a dynamic game that allows two players to compete.
 - 9 squares & who moved in each square
 
 ### User Stories:
+<a href="https://raw.githubusercontent.com/faetea/Project-1/master/documentation/Stories.txt">User stories</a>
 
 > **Story 1**
 > As a player, I can enter my name. (done)
