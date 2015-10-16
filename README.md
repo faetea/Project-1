@@ -14,13 +14,13 @@ Build a dynamic game that allows two players to compete.
 - Create front-end HTML and CSS (host on GitHub Pages)                **done Wed, 7th**
 - Write out user stories for app                                      **done Mon, 12th**
 - Write code to manage game logic                                     **done Mon, 12th**
-- Write jQuery code to handle browser interaction
+- Write jQuery code to handle browser interaction                     **done Thurs, 15th**
 - Link jQuery up w/ game’s Logic                                      **done Tues, 13th**
-- Communicate w/ back-end.  Write AJAX code
-- Add AJAX to front-end app, link it to back-end app
-- Add additional features to app.  Clean up documentation
-- Test and debug
-- Present!                                                          **Fri, 16th**
+- Communicate w/ back-end.  Write AJAX code                           **done Thurs, 15th**
+- Add AJAX to front-end app, link it to back-end appearance           **done Thurs, 15th**
+- Add additional features to app.  Clean up documentation             **done Thurs, 15th**
+- Test and debug                                                      **done Thurs, 15th**
+- Present!                                                            **Fri, 16th**
 
 ### Data Objects/Nouns:
 
