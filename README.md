@@ -2,7 +2,7 @@
 
 Deployed App: http://faetea.github.io/Project-1/
 
-<img src="https://raw.githubusercontent.com/faetea/Project-1/master/documentation/Mockup1.png">
+<a href="https://raw.githubusercontent.com/faetea/Project-1/master/documentation/Mockup1.png">Wireframe Mockup</a>
 
 
 ### Need to do:
@@ -32,9 +32,11 @@ Prompt: https://github.com/ga-wdi-boston/js-project-ttt
 **player 1**
 - name
 - choice of icon
+
 **player 2**
 - name
 - choice of icon
+
 **game board**
 - 9 squares & who moved in each square
 
