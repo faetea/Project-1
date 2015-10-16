@@ -1,15 +1,12 @@
 # Tic Tac Toe
-
 Deployed App: http://faetea.github.io/Project-1/
 
-<a href="https://raw.githubusercontent.com/faetea/Project-1/master/documentation/Mockup1.png">Wireframe Mockup</a>
-
+Wireframe Mockup: https://raw.githubusercontent.com/faetea/Project-1/master/documentation/Mockup1.png
 
 ### Need to do:
+Prompt: https://github.com/ga-wdi-boston/js-project-ttt
 
 Build a dynamic game that allows two players to compete.
-
-Prompt: https://github.com/ga-wdi-boston/js-project-ttt
 
 ### Timeline Checklist for Project #1
 
@@ -41,7 +38,7 @@ Prompt: https://github.com/ga-wdi-boston/js-project-ttt
 - 9 squares & who moved in each square
 
 ### User Stories:
-<a href="https://raw.githubusercontent.com/faetea/Project-1/master/documentation/Stories.txt">User stories</a>
+https://raw.githubusercontent.com/faetea/Project-1/master/documentation/Stories.txt
 
 > **Story 1**
 > As a player, I can enter my name. (done)
