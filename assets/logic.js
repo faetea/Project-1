@@ -11,8 +11,6 @@ var player_o = {
 var gameBoard = {};
 
 
-
-
 // button saying 'Start',
 // after player clicks 'Start', game will ask for player names.
 $( "#assign" ).click(function() {
@@ -31,6 +29,53 @@ $( "#assign" ).click(function() {
   document.getElementById('Oname').textContent = player_o.name;
 });
 
+function logShit(a,b,c) {
+  console.log(a);
+  console.log(b);
+  console.log(c);
+}
+
+var credentials = {
+  "credentials": {
+    "email": "ooga@booga.com",
+    "password": "omg"
+  }
+}
+
+cellMark = {
+  "game": {
+    "cell": {
+      "index": null,
+      "value": "x"
+    },
+    "over": false
+  }
+}
+
+gameDone = {
+  "game": {
+    "cell": {
+      "index": null,
+      "value": "x"
+    },
+    "over": true
+  }
+}
+
+var token;
+var gameId;
+
+function gameCreated(error, data) {
+  gameId = data.game.id;
+}
+
+function userLoggedIn(error, data) {
+  token = data.user.token;
+  tttapi.createGame(token, gameCreated);
+}
+
+
+tttapi.login(credentials, userLoggedIn);
 
 
 
@@ -88,6 +133,8 @@ function getWinner() {
     (gameBoard[6] != null) &&
     (gameBoard[7] != null) &&
     (gameBoard[8] != null) ) {
+    cellMark.game.over = true;
+    tttapi.markCell(gameId, cellMark, token, logShit);
     if (window.confirm("It's a tie! Do you want to play again?")) {
       window.open("index.html", "Reset the board!");
     }
@@ -124,16 +171,24 @@ $( ".square" ).click(function() {
       if (whoseTurn === 1) {
         document.getElementById(idToUse).innerHTML = dalekSnippet;
         gameBoard[idToUse] = 'dalek';
+        cellMark.game.cell.index = idToUse;
+        cellMark.game.cell.value = "x";
+        tttapi.markCell(gameId, cellMark, token, logShit);
       }
       if (whoseTurn === 2) {
         document.getElementById(idToUse).innerHTML = tardisSnippet;
         gameBoard[idToUse] = 'tardis';
+        cellMark.game.cell.index = idToUse;
+        cellMark.game.cell.value = "o";
+        tttapi.markCell(gameId, cellMark, token, logShit);
       }
 
       var winner = getWinner();
       if (winner) {
         whoseTurn = 3;
         window.alert("Game Over! " + winner + " has won!");
+        cellMark.game.over = true;
+        tttapi.markCell(gameId, cellMark, token, logShit);
         if (window.confirm("Do you want to play again?")) {
           window.open("index.html", "Reset the board!");
         }
