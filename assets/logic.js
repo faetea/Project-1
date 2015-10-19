@@ -135,8 +135,9 @@ function getWinner() {
     (gameBoard[8] != null) ) {
     cellMark.game.over = true;
     tttapi.markCell(gameId, cellMark, token, logShit);
-    if (window.confirm("It's a tie! Do you want to play again?")) {
-      window.open("index.html", "Reset the board!");
+    if (window.confirm("It's a draw! Do you want to play again?")) {
+      // window.open("index.html", "Reset the board!");
+      location.reload();
     }
   }
 };
@@ -190,7 +191,7 @@ $( ".square" ).click(function() {
         cellMark.game.over = true;
         tttapi.markCell(gameId, cellMark, token, logShit);
         if (window.confirm("Do you want to play again?")) {
-          window.open("index.html", "Reset the board!");
+          location.reload();
         }
       } else {
         switchTurn();
